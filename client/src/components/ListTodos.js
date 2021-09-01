@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react"
 
+// Components
+import EditTodo from "./EditTodo"
+
 const ListTodos = () => {
   const [todos, setTodos] = useState([])
 
@@ -24,22 +27,6 @@ const ListTodos = () => {
     }
   }
 
-  // const onSubmitForm = async (e) => {
-  //   e.preventDefault()
-  //   try {
-  //     const body = { description }
-  //     const response = await fetch("http://localhost:5000/todos", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(body),
-  //     })
-
-  //     window.location = "/"
-  //   } catch (error) {
-  //     console.error(error.message)
-  //   }
-  // }
-
   useEffect(() => {
     getTodos()
   }, [])
@@ -58,7 +45,9 @@ const ListTodos = () => {
           {todos.map((todo) => (
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
-              <td>Edit</td>
+              <td>
+                <EditTodo todo={todo} />
+              </td>
               <td>
                 <button
                   className="btn btn-danger"
