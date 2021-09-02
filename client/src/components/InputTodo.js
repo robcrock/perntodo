@@ -21,7 +21,7 @@ const InputTodo = () => {
 
   return (
     <>
-      <h1 className="text-center mt-5">Pern Todo List</h1>
+      <h1 className="text-center mt-5">My First Full-Stack App</h1>
       <form className="d-flex" onSubmit={onSubmitForm}>
         <input
           type="text"
